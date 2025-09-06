@@ -23,13 +23,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  name             : "Sanghyeon Jeon"
+  pronouns         : "he/him"  
+  bio              : "Ph.D. Student at Grady College of Journalism and Mass Communication"
+  location         : "Athens, GA, USA"
+  employer         : "University of Georgia"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "Sanghyeon.Jeon@uga.edu" 
 
   # Academic websites
   academia         : # URL
