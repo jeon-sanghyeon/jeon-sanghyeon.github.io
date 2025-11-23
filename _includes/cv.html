@@ -137,13 +137,7 @@
       <li class="cv-item">
         <div class="cv-item-header">
           <div class="cv-item-title">{{ education.area }}</div>
-          <div class="cv-item-date">
-            {% if education.startDate %}
-              <span class="cv-date-start">{{ education.startDate }}</span><span class="cv-date-sep"> - </span><span class="cv-date-end">{{ education.endDate }}</span>
-            {% else %}
-              <span class="cv-date-end">{{ education.endDate }}</span>
-            {% endif %}
-          </div>
+          <div class="cv-item-date">{% if education.startDate %}{{ education.startDate }}{% if education.endDate %} - {{ education.endDate }}{% endif %}{% else %}{{ education.endDate }}{% endif %}</div>
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ education.institution }}</div>
