@@ -123,22 +123,26 @@
   "honors": [
     {
       "title": "Outstanding Thesis Award",
-      "date": "2020",
+      "startDate": "",
+      "endDate": "2020",
       "awarder": "Kyung Hee University"
     },
     {
       "title": "National Graduate Research Scholarship",
-      "date": "2019",
+      "startDate": "",
+      "endDate": "2019",
       "awarder": "Korea Student Aid Foundation (KOSAF)"
     },
     {
       "title": "The 1st GS Shop Content Leader Scholarship",
-      "date": "2018",
+      "startDate": "",
+      "endDate": "2018",
       "awarder": "The Korean Society for Journalism and Communication Studies (KSJCS)"
     },
     {
       "title": "The Next Century Social Sciences Scholarship",
-      "date": "2016-2017",
+      "startDate": "2016",
+      "endDate": "2017",
       "awarder": "Korea Student Aid Foundation (KOSAF)"
     }
   ],

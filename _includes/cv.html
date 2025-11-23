@@ -303,7 +303,13 @@
       <li class="cv-item">
         <div class="cv-item-header">
           <div class="cv-item-title">{{ item.title }}</div>
-          <div class="cv-item-date">{{ item.date | slice: 0, 9 }}</div>
+          <div class="cv-item-date">
+            {% if item.startDate %}
+              {{ item.startDate }}{% if item.endDate %}<wbr>&nbsp;-&nbsp;<wbr>{{ item.endDate }}{% endif %}
+            {% else %}
+              {{ item.endDate }}
+            {% endif %}
+          </div>
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ item.awarder}}</div>
