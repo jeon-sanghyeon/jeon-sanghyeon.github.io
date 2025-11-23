@@ -137,14 +137,8 @@
       <li class="cv-item">
         <div class="cv-item-header">
           <div class="cv-item-title">{{ education.area }}</div>
-          <!-- education date -->
-          <div class="cv-item-date">
-            {% if education.startDate %}
-              <span class="cv-date-start">{{ education.startDate }}</span>{% if education.endDate %}<span class="cv-date-sep"> - </span><span class="cv-date-end">{{ education.endDate }}</span>{% endif %}
-            {% else %}
-              <span class="cv-date-end">{{ education.endDate }}</span>
-            {% endif %}
-          </div>
+          <!-- education date: 종료일만 표시 -->
+          <div class="cv-item-date">{% if education.endDate %}{{ education.endDate }}{% endif %}</div>
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ education.institution }}</div>
