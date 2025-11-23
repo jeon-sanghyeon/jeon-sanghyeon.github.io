@@ -6,41 +6,54 @@
     --cv-gap: 1rem;
   }
 
-  /* 제목: 단어 단위로 줄바꿈, 부드러운 하이픈 처리 */
+  .cv-item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--cv-gap);
+  }
+
   .cv-item-title {
     flex: 1 1 auto;
     min-width: 0;
     max-width: calc(100% - var(--cv-date-width));
-    display: block;
     white-space: normal;
-    overflow-wrap: break-word;   /* 단어 단위 우선 줄바꿈 */
-    word-break: normal;          /* 가능한 한 단어 단위로 나눔 */
+    overflow-wrap: break-word;
     hyphens: auto;
-    vertical-align: top;
   }
 
-  /* 날짜 칸: 기본은 한 줄, 하지만 <wbr>에서 줄바꿈 허용.
-     오른쪽 정렬(데스크탑) — 모바일에서 stacked이면 좌측 정렬 */
-  .cv-item-date{
+  /* desktop: 날짜 칸 고정폭, 한 줄로 유지(우측정렬) */
+  .cv-item-date {
     flex: 0 0 var(--cv-date-width);
     min-width: var(--cv-date-width);
     text-align: right;
-    white-space: nowrap;         /* 전체를 한 줄로 유지하되 <wbr>로 분할 허용 */
+    white-space: nowrap;
     font-variant-numeric: tabular-nums;
-    overflow-wrap: normal;       /* 날짜 내부는 기본적으로 단어 단위로 보이게 */
   }
 
-  /* 작은 화면: 날짜를 아래로 내리면 왼쪽 정렬이 더 자연스러움 */
+  /* separate spans for controlling breaks/attachment */
+  .cv-date-start { white-space: nowrap; }   /* start + sep 붙게 유지 */
+  .cv-date-sep   { margin: 0 .4ch; }        /* 하이픈 간격 (조정 가능) */
+  .cv-date-end   { white-space: nowrap; }
+
+  /* 모바일: 날짜를 아래로 내려서 좌측 정렬, 인덴트 제거 */
   @media (max-width: 480px) {
     .cv-item-header { display: block; }
     .cv-item-title { max-width: 100%; }
+
     .cv-item-date {
       flex: none;
       width: 100%;
       min-width: 0;
-      white-space: normal;   /* 모바일에서는 날짜 내부에서도 줄바꿈 허용 */
-      text-align: left;      /* 모바일에서는 왼쪽 정렬 */
+      white-space: normal;   /* 모바일에서 줄바꿈 허용 */
+      text-align: left;      /* 모바일은 왼쪽 정렬이 자연스러움 */
       margin-top: .25rem;
+    }
+
+    /* 모바일에서 리스트 인덴트 제거 */
+    .cv-list {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+      list-style: none; /* 필요하면 none 대신 inside 등으로 바꿀 수 있음 */
     }
   }
 
@@ -126,9 +139,9 @@
           <div class="cv-item-title">{{ education.area }}</div>
           <div class="cv-item-date">
             {% if education.startDate %}
-              {{ education.startDate }}{% if education.endDate %}<wbr>&nbsp;-&nbsp;<wbr>{{ education.endDate }}{% endif %}
+              <span class="cv-date-start">{{ education.startDate }}</span><span class="cv-date-sep"> - </span><span class="cv-date-end">{{ education.endDate }}</span>
             {% else %}
-              {{ education.endDate }}
+              <span class="cv-date-end">{{ education.endDate }}</span>
             {% endif %}
           </div>
         </div>
