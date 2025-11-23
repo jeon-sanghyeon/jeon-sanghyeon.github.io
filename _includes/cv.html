@@ -9,14 +9,14 @@
   .cv-item-title {
     display: inline-block;
     max-width: 65ch;       /* approx. characters per line */
-    white-space: pre-wrap;   /* allow wrapping */
-    overflow-wrap: break-word; /* break long words if needed */
+    white-space: normal;   /* allow wrapping */
+    overflow-wrap: anywhere; /* break long words if needed */
     hyphens: auto;         /* optional: soft hyphenation if supported */
     vertical-align: top;
   }
 
   .cv-item-date {
-    min-width: 10ch;            /* 한 열의 최소 너비 (조정 가능) */
+    min-width: 9ch;            /* 한 열의 최소 너비 (조정 가능) */
     text-align: right;          /* 종료일 정렬 */
     white-space: normal;        /* 날짜가 줄바꿈됨 */
     font-variant-numeric: tabular-nums; /* 숫자 정렬 안정화 */
@@ -29,7 +29,7 @@
   }
 
   /* very small screens: use full width */
-  @media (max-width: 40em) {
+  @media (max-width: 35ch) {
     .cv-item-title { max-width: 80%; }
     .cv-item-date { min-width: 4ch; }
   }
