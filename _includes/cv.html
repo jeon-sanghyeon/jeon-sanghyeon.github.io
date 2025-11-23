@@ -8,7 +8,7 @@
 
   .cv-item-title {
     display: inline-block;
-    max-width: 60ch;       /* approx. characters per line */
+    max-width: 80ch;       /* approx. characters per line */
     white-space: normal;   /* allow wrapping */
     overflow-wrap: anywhere; /* break long words if needed */
     hyphens: auto;         /* optional: soft hyphenation if supported */
@@ -17,7 +17,7 @@
 
   /* smaller screens: shorter lines */
   @media (max-width: 60em) {
-    .cv-item-title { max-width: 28ch; }
+    .cv-item-title { max-width: 40ch; }
   }
 
   /* very small screens: use full width */
@@ -88,7 +88,10 @@
       <li class="cv-item">
         <div class="cv-item-header">
           <div class="cv-item-title">{{ education.area }}</div>
-          <div class="cv-item-date">{% if education.startDate %}{{ education.startDate }} - {% endif %}{{ education.endDate }}</div>
+          <div class="cv-item-date">
+            {% if education.startDate and education.endDate %}{{ education.startDate }} - {{ education.endDate }}
+            {% elsif education.endDate %}{{ education.endDate }}
+            {% elsif education.startDate %}{{ education.startDate }}{% endif %}</div>
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ education.institution }}</div>
