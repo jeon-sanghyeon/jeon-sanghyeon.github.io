@@ -227,7 +227,7 @@
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ publication.publisher }}</div>
           {% if publication.author %}
-          <div class="cv-item-detail">{{ publication.author }}</div>
+          <div class="cv-item-detail">{{ publication.author | replace: "Jeon, S.", "<b>Jeon, S.</b>" }}</div>
           {% endif %}
           {% if publication.website %}
           <div class="cv-item-detail">
