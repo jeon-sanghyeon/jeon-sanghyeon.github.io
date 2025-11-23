@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Sanghyeon Jeon",
+    "email": "Sanghyeon.Jeon@uga.edu",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://jeon-sanghyeon.github.io",
+    "summary": "Ph.D. Student at Grady College of Journalism and Mass Communication, University of Georgia. Research interests include Technology, society, and human behavior, Impacts of AI-driven media and communication, Ethics and design of emerging technologies, Psychological well-being, Responsible media use, Mixed methods, Computational social science.",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "address": "120 Hooper St",
+      "postalCode": "30602",
+      "city": "Athens",
+      "countryCode": "USA",
+      "region": "GA"
     },
     "profiles": [
       {
@@ -22,40 +22,35 @@
         "network": "ORCID",
         "username": "",
         "url": "http://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
       }
     ]
   },
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
+      "institution": "University of Georgia",
+      "area": "Ph.D. Student in Mass Communication",
+      "studyType": "",
+      "startDate": "Aug 2025",
+      "endDate": "Present",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Kyung Hee University",
+      "area": "M.A. in Journalism & Communication",
+      "studyType": "",
+      "startDate": "",
+      "endDate": "2020",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Kyung Hee University",
+      "area": "B.A. in Journalism & Communication",
       "studyType": "",
       "startDate": "",
       "endDate": "2018",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
       "gpa": null,
       "courses": []
     }
