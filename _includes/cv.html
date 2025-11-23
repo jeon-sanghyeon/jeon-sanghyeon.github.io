@@ -7,7 +7,7 @@
     float: none;
     padding-right: 0;
   }
-  
+
   @media (min-width: 80em) {
     .archive {
       width: 70%;
@@ -17,6 +17,57 @@
   /* hide the CV header (name, contact, profiles) */
   .cv-section.cv-header {
     display: none !important;
+  }
+
+  /* ---- responsive sidebar layout to avoid overlap ---- */
+  /* container holding main + sidebar: try to match site layout classes */
+  .cv-container,
+  .page__content,
+  .page {
+    box-sizing: border-box;
+  }
+
+  /* prefer flex layout on wide screens */
+  @media (min-width: 60em) {
+    .page, .page__content, .cv-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    /* main content area */
+    .archive,
+    .main,
+    .page__main {
+      flex: 1 1 auto;
+      min-width: 0; /* allow shrinking to avoid overflow */
+      width: auto;
+    }
+
+    /* sidebar fixed width */
+    .page__sidebar,
+    .sidebar {
+      flex: 0 0 22rem;
+      width: 22rem;
+    }
+  }
+
+  /* stack on small screens so sidebar doesn't overlap */
+  @media (max-width: 60em) {
+    .page, .page__content, .cv-container {
+      display: block;
+    }
+    .page__sidebar,
+    .sidebar,
+    .archive,
+    .main,
+    .page__main {
+      width: 100% !important;
+      flex: none !important;
+    }
+    .page__sidebar {
+      margin-top: 1.5rem;
+    }
   }
 </style>
 
