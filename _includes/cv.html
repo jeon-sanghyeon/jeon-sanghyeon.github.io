@@ -15,14 +15,23 @@
     vertical-align: top;
   }
 
+  .cv-item-date {
+    min-width: 10ch;            /* 한 열의 최소 너비 (조정 가능) */
+    text-align: right;          /* 종료일 정렬 */
+    white-space: nowrap;        /* 날짜가 줄바꿈되지 않음 */
+    font-variant-numeric: tabular-nums; /* 숫자 정렬 안정화 */
+  }
+
   /* smaller screens: shorter lines */
   @media (max-width: 40ch) {
     .cv-item-title { max-width: 40ch; }
+    .cv-item-date { min-width: 100%; }
   }
 
   /* very small screens: use full width */
   @media (max-width: 40em) {
-    .cv-item-title { max-width: 100%; }
+    .cv-item-title { max-width: 40ch; }
+    .cv-item-date { min-width: 100%; }
   }
 </style>
 
