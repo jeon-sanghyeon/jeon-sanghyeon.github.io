@@ -25,7 +25,68 @@
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "University of Georgia",
+      "location": "Athens, GA",
+      "position": "Graduate Assistantship",
+      "website": "",
+      "startDate": "2025",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "SK Research Institute for SUPEX Management",
+      "location": "Seoul, South Korea",
+      "position": "Research Assistant",
+      "website": "",
+      "startDate": "2021",
+      "endDate": "2023",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "Center for Digital Social Science, Yonsei University",
+      "location": "Seoul, South Korea",
+      "position": "Research Intern",
+      "website": "",
+      "startDate": "2020",
+      "endDate": "2020",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "Communication Lab, Kyung Hee University",
+      "location": "Seoul, South Korea",
+      "position": "Researcher",
+      "website": "",
+      "startDate": "2019",
+      "endDate": "2020",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "Kyung Hee University",
+      "location": "Seoul, South Korea",
+      "position": "Graduate Assistantship",
+      "website": "",
+      "startDate": "2018",
+      "endDate": "2019",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "SUBUSU News, Seoul Broadcasting System(SBS)",
+      "location": "Seoul, South Korea",
+      "position": "Intern (Digital News Team)",
+      "website": "",
+      "startDate": "2016",
+      "endDate": "2017",
+      "summary": "",
+      "highlights": []
+    }
+  ],
   "education": [
     {
       "institution": "University of Georgia",
@@ -84,57 +145,51 @@
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
+      "name": "The effects of perceived attributes and emotions toward AI social robots on relationship formation and maintenance intention: An exploratory study.",
+      "event": "Korean Association of Advertising and Public Relations",
+      "date": "Jun 2025",
+      "location": "Gangneung, South Korea",
+      "author": "Jeon, S."
       "description": ""
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
+      "name": "Using ChatGPT to compose training data and develop a BERT deep learning model for news sentiment analysis.",
+      "event": "Korean Soceity for Journalism and Communication Studies",
+      "date": "May 2023",
+      "location": "Jeju, South Korea",
+      "author": "Lee, J., Jeon, S., & Kim, H.",
       "description": ""
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
+      "name": "Why do corporate unethical violations not lead to an individual’s boycott?",
+      "event": "Korean Academic Society for Public Relations",
+      "date": "Nov 2018",
+      "location": "Seoul, South Korea",
+      "author": "Jeon, S., Kim, H., Zhang, X., Kim, J., & Cho, S.",
       "description": ""
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
+      "course": "ADPR 3120 Media Strategy and Activation",
+      "institution": "University of Georgia",
+      "date": "Fall 2025",
+      "role": "Teaching Assistant",
       "description": ""
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
+      "course": "ADPR 5710 Advertising and Communication Management",
+      "institution": "University of Georgia",
+      "date": "Fall 2025",
+      "role": "Teaching Assistant",
       "description": ""
-    }
-  ],
-  "portfolio": [
+    },
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "course": "ADPR 5760 Digital and Social Communication Strategies",
+      "institution": "University of Georgia",
+      "date": "Fall 2025",
+      "role": "Teaching Assistant",
+      "description": ""
     }
   ]
 }
