@@ -4,7 +4,7 @@
     "email": "Sanghyeon.Jeon@uga.edu",
     "phone": "",
     "website": "https://jeon-sanghyeon.github.io",
-    "summary": "Technology, society, and human behavior, Impacts of AI-driven media and communication, Ethics and design of emerging technologies, Psychological well-being, Responsible media use, Mixed methods, Computational social science.",
+    "summary": "Impacts of AI-driven media in communication, Designing ethical emerging technologies, Responsible media use behavior, Psychological processing of media content",
     "location": {
       "address": "120 Hooper St",
       "postalCode": "30602",
@@ -120,6 +120,28 @@
   "languages": [],
   "interests": [],
   "references": [],
+  "honors": [
+    {
+      "title": "Outstanding Thesis Award",
+      "date": "2020",
+      "awarder": "Kyung Hee University"
+    },
+    {
+      "title": "National Graduate Research Scholarship",
+      "date": "2019",
+      "awarder": "Korea Student Aid Foundation (KOSAF)"
+    },
+    {
+      "title": "The 1st GS Shop Content Leader Scholarship",
+      "date": "2018",
+      "awarder": "The Korean Society for Journalism and Communication Studies (KSJCS)"
+    },
+    {
+      "title": "The Next Century Social Sciences Scholarship",
+      "date": "2016-2017",
+      "awarder": "Korea Student Aid Foundation (KOSAF)"
+    }
+  ],
   "publications": [
     {
       "name": "News shift from Facebook to YouTube: An application of actor-network theory to semantic network analysis of IT news articles",
