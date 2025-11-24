@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "sanghyeon jeon"
+title                    : "jeon."
 title_separator          : "-"
-name                     : "sanghyeon jeon"
-description              : "sanghyeon jeon"
+name                     : "Sanghyeon Jeon"
+description              : ""
 url                      : "https://jeon-sanghyeon.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # "academicpages/academicpages.github.io"
