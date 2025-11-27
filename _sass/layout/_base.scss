@@ -340,7 +340,7 @@ nav {
   }
 
 /* Global animation transition */
-*, *::before, *::after {
+b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, h3, h4, h5, h6, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser, li, ul, ol, dl, dt, dd, pre, code, div, .sidebar, .page, .masthead {
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
