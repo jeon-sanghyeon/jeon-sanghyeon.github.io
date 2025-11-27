@@ -23,12 +23,10 @@
     top: $masthead-height;
     height: calc(100vh - #{$masthead-height});
     overflow-y: auto;
-    overflow-x: hidden;
   }
 
   @include breakpoint($large) {
     @include span(2 of 12);
-    min-width: 200px;
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
             transition: opacity 0.2s ease-in-out;

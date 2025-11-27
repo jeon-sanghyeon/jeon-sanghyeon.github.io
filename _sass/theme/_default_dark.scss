@@ -26,7 +26,7 @@ $warning-color              : #f89406;
 /* Other basic settings for the template */
 $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.5s ease-in-out;
+$global-transition          : all 0.2s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
@@ -51,6 +51,6 @@ html[data-theme="dark"] {
     --global-text-color                 : #{$text};
     --global-text-color-light           : #f3f3f3;
     --global-thead-color                : #{$background-lighter};
-    --global-selection-bg-color         : #ecddcd;
+    --global-selection-bg-color         : #b9ac9e;
     --global-selection-text-color       : #312620;
 }
