@@ -14,3 +14,5 @@ While working at a digital newsroom greatly influenced by platform logic and its
 I am keen to pursue my study of how our emerging media technologies, such as AI, would shape our mental models in the form of hyper-personalized recommendations. In addition, I wish to learn what human psychological factors would respond to and would reshape those new technologies.
 
 Another focus of my research would be unearthing how to design a wholesome media environment. By discovering facilitators to lead our mindsets into responsible, ethical media use, I want to contribute to our society's psychological well-being. I specifically hope to delve into the role of our emotions and psychological traits and investigate the power of media literacy (of all kinds) to address the potential pitfalls of our technology and society.
+
+* I love capturing beautiful landscapes and everyday moments. If you'd like to see my work, feel free to check out my photos <a href="https://sanghyeon1.myportfolio.com" target="_blank">here</a>!
