@@ -49,6 +49,7 @@
 }
 
 .page__content {
+  transition: $global-transition;
 
   h2 {
     padding-bottom: 0.5em;

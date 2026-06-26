@@ -347,6 +347,10 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
 
 /* CV and author sections: ensure nested content transitions on theme change */
 .cv-container, .cv-container *,
+.cv-list, .cv-list *,
+.cv-item, .cv-item *,
+.page__content, .page__content *,
+.page__inner-wrap, .page__inner-wrap *,
 .author__content, .author__content *,
 .author__desktop, .author__desktop *,
 .author__name, .author__bio, .author__pronouns {
