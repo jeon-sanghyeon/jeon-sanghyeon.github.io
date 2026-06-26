@@ -345,6 +345,19 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   transition: $global-transition;
 }
 
+/* CV and author sections: ensure nested content transitions on theme change */
+.cv-container, .cv-container *,
+.author__content, .author__content * {
+  -webkit-transition: $global-transition;
+  transition: $global-transition;
+}
+
+/* Social icons transition */
+.social-icons i, .social-icons .ai, .social-icons .fa {
+  -webkit-transition: $global-transition;
+  transition: $global-transition;
+}
+
 /* ==========================================================================
    PRINT STYLES
    ========================================================================== */

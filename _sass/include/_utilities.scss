@@ -254,7 +254,7 @@ body:hover .visually-hidden button {
 
   .fa-linkedin,
   .fa-linkedin-square {
-    color: $linkedin-color;
+    color: inherit;
   }
 
   .fa-mastodon,
@@ -264,8 +264,16 @@ body:hover .visually-hidden button {
 
   .ai-orcid,
   .ai-orcid-square {
-    color: $orcid-color;
+    color: inherit;
   }
+
+/* Ensure social icons inherit parent color so they follow theme/link colors */
+.social-icons .fa,
+.social-icons .ai {
+  color: inherit;
+  -webkit-transition: $global-transition;
+  transition: $global-transition;
+}
 
   .fa-pinterest,
   .fa-pinterest-p,
