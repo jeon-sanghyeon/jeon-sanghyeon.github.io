@@ -94,3 +94,13 @@ Unfortunately, one logistical issue with a template theme like Academic Pages th
 [![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
 [![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
 </div>
+
+## Theme transitions (customization)
+
+- **Where to change:** update the site-wide transition settings in `_sass/settings/_transitions.scss`. This partial defines the `$global-transition` variable used across themes and utilities.
+- **What to change:** modify the timing (e.g., `0.2s` → `0.3s`), easing (`ease-in-out`), or the list of properties (background-color, color, border-color, opacity, transform).
+- **Third-party CSS:** vendor files (for example `talkmap/leaflet_dist/MarkerCluster.css`) may include their own transition values; edit those if you need strict consistency.
+- **Accessibility:** the project includes a `@media (prefers-reduced-motion: reduce)` rule in `_sass/layout/_base.scss` — keep it to respect users who prefer reduced motion.
+
+Tip: If you prefer a single global variables file, move `_sass/settings/_transitions.scss` into `_sass/_variables.scss` and import it from themes.
+

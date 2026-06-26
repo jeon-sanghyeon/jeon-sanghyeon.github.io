@@ -69,8 +69,8 @@ body:hover .visually-hidden button {
   position: fixed;
   z-index: 20;
   margin: 0;
-  font-family: $sans-serif;
-  white-space: nowrap;
+    -webkit-transition: $global-transition;
+    transition: $global-transition;
 }
 
 .skip-link li {
@@ -79,8 +79,8 @@ body:hover .visually-hidden button {
   list-style: none;
 }
 
-
-/*
+      -webkit-transition: $global-transition;
+      transition: $global-transition;
    Type
    ========================================================================== */
 
