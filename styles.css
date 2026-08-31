@@ -462,6 +462,8 @@ body.quarto-dark code:not(pre code) {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
   min-height: var(--navbar-height);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -616,3 +618,22 @@ footer.footer {
   opacity: 1;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface-bg);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  color: var(--text-primary);
+}
