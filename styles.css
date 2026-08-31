@@ -133,12 +133,6 @@ hr {
   opacity: 1;
 }
 
-footer.footer,
-.page-footer {
-  color: var(--text-muted);
-  border-top-color: var(--rule) !important;
-}
-
 ::selection {
   background: var(--selection-bg);
 }
@@ -512,11 +506,29 @@ body.quarto-dark code:not(pre code) {
   line-height: 1 !important;
 }
 
-/* Keep Bootstrap/Quarto theme switching from changing footer geometry. */
+/* Footer */
 .page-footer,
 footer.footer {
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.4;
+  border-top-color: var(--rule) !important;
+}
+
+/* Quarto-generated footer layout */
+.nav-footer {
+  min-height: 0;
+}
+
+.nav-footer-left,
+.nav-footer-center,
+.nav-footer-right {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.nav-footer-center {
+  margin-top: 0.5rem !important;
 }
 
 /* Hide only Quarto's automatically generated page title block.
