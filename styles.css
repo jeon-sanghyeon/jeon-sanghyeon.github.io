@@ -398,10 +398,15 @@ body.quarto-dark code:not(pre code) {
   .profile-contact {
     grid-column: 1 / -1;
     grid-row: 2;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.6rem 0.55rem;
     margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  .profile-contact p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.55rem;
+    margin: 0;
   }
 
   .profile-contact-item {
