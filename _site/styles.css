@@ -133,12 +133,6 @@ hr {
   opacity: 1;
 }
 
-footer.footer,
-.page-footer {
-  color: var(--text-muted);
-  border-top-color: var(--rule) !important;
-}
-
 ::selection {
   background: var(--selection-bg);
 }
@@ -344,7 +338,7 @@ body.quarto-dark code:not(pre code) {
   .profile-layout {
     display: block;
     margin-top: 1.15rem;
-    padding-inline: clamp(1rem, 5vw, 1.35rem);
+    padding-inline: 0;
   }
 
   .profile-panel {
@@ -468,6 +462,8 @@ body.quarto-dark code:not(pre code) {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
   min-height: var(--navbar-height);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -512,11 +508,29 @@ body.quarto-dark code:not(pre code) {
   line-height: 1 !important;
 }
 
-/* Keep Bootstrap/Quarto theme switching from changing footer geometry. */
+/* Footer */
 .page-footer,
 footer.footer {
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.4;
+  border-top-color: var(--rule) !important;
+}
+
+/* Quarto-generated footer layout */
+.nav-footer {
+  min-height: 0;
+}
+
+.nav-footer-left,
+.nav-footer-center,
+.nav-footer-right {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.nav-footer-center {
+  margin-top: 0.5rem !important;
 }
 
 /* Hide only Quarto's automatically generated page title block.
@@ -604,3 +618,22 @@ footer.footer {
   opacity: 1;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface-bg);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  color: var(--text-primary);
+}

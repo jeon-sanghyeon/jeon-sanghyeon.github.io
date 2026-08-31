@@ -565,6 +565,7 @@ SK Research Institute for SUPEX Management (SKRI), Seoul, South Korea</p>
 <p>The 1st GS Shop Content Leader Scholarship</p>
 </div>
 </div>
+<p><a href="#" class="back-to-top">↑ Top</a></p>
 </section>
 </div>
 
@@ -657,7 +658,7 @@ SK Research Institute for SUPEX Management (SKRI), Seoul, South Korea</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/jeon-sanghyeon\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

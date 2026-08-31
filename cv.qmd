@@ -329,4 +329,8 @@ The 1st GS Shop Content Leader Scholarship
 :::
 :::
 
+::: {.content-visible when-format="html"}
+[↑ Top](#){.back-to-top}
+:::
+
 :::
