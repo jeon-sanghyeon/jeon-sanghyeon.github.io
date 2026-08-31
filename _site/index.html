@@ -290,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="profile-layout">
 <div class="profile-panel" aria-label="Profile">
 <div class="profile-avatar">
-<p><img src="_site/images/profile.jpg" class="profile-photo img-fluid"></p>
+<p><img src="./images/profile.jpg" class="profile-photo img-fluid"></p>
 </div>
 <!--
 To use a real portrait, replace the .profile-avatar block above with:
@@ -419,7 +419,7 @@ A square or 4:5 portrait works best. The CSS crops it responsively.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/jeon-sanghyeon\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

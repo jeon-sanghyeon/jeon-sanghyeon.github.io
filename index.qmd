@@ -7,7 +7,7 @@ page-layout: full
 ::::::::::::: profile-layout
 ::::::::::: {.profile-panel aria-label="Profile"}
 ::: {.profile-avatar}
-![](_site/images/profile.jpg){.profile-photo}
+![](/images/profile.jpg){.profile-photo}
 :::
 
 ```{=html}
