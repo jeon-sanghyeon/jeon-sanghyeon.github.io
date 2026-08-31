@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "jeon."
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - href: cv.qmd
+        text: CV
+  page-footer:
+    center: "© 2026 Sanghyeon Jeon"
+
+format:
+  html:
+    theme:
+      light:
+        - cosmo
+        - theme-light.scss
+      dark:
+        - cosmo
+        - theme-dark.scss
+    css: styles.css
+    toc: false

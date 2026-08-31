@@ -1,0 +1,601 @@
+/* -------------------------------------------------------------------------
+   Academic website design system
+   Display / identity : Spectral Bold
+   Reading / content  : Source Serif 4
+   UI / navigation    : Source Sans 3
+
+   The web fonts are loaded from Google Fonts. All three families are open
+   source. For a fully self-hosted site, replace this import with local
+   @font-face declarations; see README.md.
+   ------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Spectral:wght@700&display=swap');
+
+:root {
+  --site-content-width: 900px;
+
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-reading: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-ui: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Light mode: warm paper rather than stark white. */
+  --page-bg: #f7f7f6;
+  --surface-bg: #fbfbfa;
+  --text-primary: #2a2b2b;
+  --text-muted: #6f7273;
+  --rule: #d9d9d6;
+  --link: #4f6f84;
+  --link-hover: #35586f;
+  --nav-bg: rgba(247, 247, 246, 0.94);
+  --selection-bg: #e1e2e0;
+}
+
+/* Quarto adds .quarto-dark to the body when the dark color scheme is active. */
+body.quarto-dark {
+  --page-bg: #2b2a29;
+  --surface-bg: #323130;
+  --text-primary: #e3e3e2;
+  --text-muted: #aaa6a1;
+  --rule: #494744;
+  --link: #b2bec3;
+  --link-hover: #c2d4e3;
+  --nav-bg: rgba(43, 42, 41, 0.94);
+  --selection-bg: #555451;
+}
+
+html,
+body {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-reading);
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+main.content {
+  max-width: var(--site-content-width);
+}
+
+/* Identity / site title */
+.navbar-brand,
+.quarto-title h1,
+.site-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* UI stays typographically distinct from reading text. */
+.navbar,
+.navbar-nav,
+.nav-link,
+.quarto-color-scheme-toggle,
+footer.footer,
+.page-footer,
+.sidebar,
+.toc-actions,
+.code-copy-button,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-ui);
+}
+
+.navbar {
+  background: var(--nav-bg) !important;
+  box-shadow: none;
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .quarto-color-scheme-toggle {
+  color: var(--text-primary) !important;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--link) !important;
+}
+
+/* Keep Quarto's built-in light/dark control quiet and consistent with nav. */
+.quarto-color-scheme-toggle {
+  opacity: 0.76;
+}
+
+.quarto-color-scheme-toggle:hover {
+  opacity: 1;
+}
+
+a {
+  color: var(--link);
+  text-decoration-color: color-mix(in srgb, var(--link) 52%, transparent);
+  text-underline-offset: 0.14em;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+hr {
+  border-color: var(--rule);
+  opacity: 1;
+}
+
+footer.footer,
+.page-footer {
+  color: var(--text-muted);
+  border-top-color: var(--rule) !important;
+}
+
+::selection {
+  background: var(--selection-bg);
+}
+
+/* Dark Bootstrap themes may otherwise force their own surface/text colors. */
+body.quarto-dark .card,
+body.quarto-dark .callout,
+body.quarto-dark pre,
+body.quarto-dark code:not(pre code) {
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Responsive academic profile
+   Desktop : compact profile rail + reading column
+   Mobile  : profile becomes a horizontal/stacked identity card above content
+   ------------------------------------------------------------------------- */
+
+.profile-layout {
+  width: min(100%, 1120px);
+  margin: clamp(1.5rem, 4vw, 3.5rem) auto 0;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: clamp(2.25rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.profile-panel {
+  position: sticky;
+  top: 5.25rem;
+  min-width: 0;
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+}
+
+.profile-avatar,
+.profile-photo {
+  width: min(100%, 220px);
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--text-primary) 7%, var(--page-bg));
+  border: 2px solid var(--rule);
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  color: var(--text-muted);
+}
+
+.profile-photo p {
+  margin: 0;
+  height: 100%;
+}
+
+.profile-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.profile-identity {
+  margin-bottom: 1.1rem;
+}
+
+.profile-name {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.2vw, 2rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.profile-role {
+  display: block;
+  margin: 0 0 0.22rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.profile-affiliation {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.profile-identity p,
+.profile-role p,
+.profile-affiliation p,
+.profile-location p {
+  margin: 0;
+}
+
+.profile-location {
+  margin-top: 0.38rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.profile-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  margin-top: 1rem;
+}
+
+.profile-contact-item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.25rem 0;
+  font-family: var(--font-ui);
+  font-size: 0.96rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.profile-contact-item::after {
+  content: "↗";
+  margin-left: 0.35rem;
+  font-size: 0.78em;
+  opacity: 0.58;
+}
+
+.profile-contact-item[href^="mailto:"]::after {
+  content: "↗";
+  margin-left: 0.35rem;
+}
+
+.profile-note {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.profile-main {
+  min-width: 0;
+  max-width: 760px;
+  font-size: clamp(1rem, 0.97rem + 0.12vw, 1.08rem);
+  line-height: 1.58;
+}
+
+.profile-main > :first-child {
+  margin-top: 0;
+}
+
+.profile-main h2 {
+  margin-top: clamp(2rem, 5vw, 3.25rem);
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.28rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-reading);
+  font-size: clamp(1.12rem, 1.02rem + 0.4vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+/* Tablet: keep the profile beside the prose, but give prose priority. */
+@media (max-width: 900px) {
+  .profile-layout {
+    grid-template-columns: minmax(190px, 230px) minmax(0, 1fr);
+    gap: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  .profile-panel {
+    top: 4.75rem;
+  }
+}
+
+/* Mobile: identity first, content second. Photo + identity sit side-by-side
+   when there is enough width, and gracefully collapse on narrow phones. */
+@media (max-width: 680px) {
+  .profile-layout {
+    display: block;
+    margin-top: 1.15rem;
+    padding-inline: clamp(1rem, 5vw, 1.35rem);
+  }
+
+  .profile-panel {
+    position: static;
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: center;
+    padding-bottom: 1.35rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .profile-avatar,
+  .profile-photo {
+    grid-column: 1;
+    grid-row: 1;
+    width: 88px;
+    margin: 0;
+  }
+
+  .profile-avatar {
+    font-size: 2rem;
+  }
+
+  .profile-identity {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .profile-name {
+    font-size: clamp(1.5rem, 6.4vw, 1.82rem);
+    margin-bottom: 0.42rem;
+  }
+
+  .profile-role {
+    margin-top: 0;
+    font-size: 0.92rem;
+  }
+
+  .profile-affiliation {
+    font-size: 0.87rem;
+  }
+
+  .profile-location {
+    margin-top: 0.3rem;
+    font-size: 0.82rem;
+  }
+
+  .profile-contact {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .profile-contact-item {
+    min-height: 0;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--surface-bg);
+    line-height: 1;
+  }
+
+  .profile-note {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 0.8rem;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .profile-main {
+    max-width: none;
+  }
+
+  .profile-main h2 {
+    margin-top: 2.15rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .profile-panel {
+    grid-template-columns: 72px minmax(0, 1fr);
+    column-gap: 0.85rem;
+  }
+
+  .profile-avatar,
+  .profile-photo {
+    width: 72px;
+  }
+
+  .profile-avatar {
+    font-size: 1.7rem;
+  }
+
+  .profile-contact {
+    gap: 0.4rem;
+  }
+
+  .profile-contact-item {
+    padding-inline: 0.62rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Stable navbar geometry across light/dark modes
+   ------------------------------------------------------------------------- */
+:root {
+  --navbar-height: 3.75rem;
+}
+
+.navbar {
+  min-height: var(--navbar-height);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  z-index: 1030;
+}
+
+.navbar > .container-fluid,
+.navbar > .container,
+.navbar .navbar-container {
+  min-height: calc(var(--navbar-height) - 1rem);
+  align-items: center;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link,
+.quarto-color-scheme-toggle {
+  line-height: 1.25;
+}
+
+/* Give the scheme toggle an invariant box so the sun/moon glyph swap cannot
+   change the navbar's intrinsic height. */
+.quarto-color-scheme-toggle {
+  box-sizing: border-box;
+  display: inline-grid !important;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  margin: 0;
+  padding: 0 !important;
+  border: 0;
+  line-height: 1 !important;
+}
+
+.quarto-color-scheme-toggle .bi,
+.quarto-color-scheme-toggle i,
+.quarto-color-scheme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  line-height: 1 !important;
+}
+
+/* Keep Bootstrap/Quarto theme switching from changing footer geometry. */
+.page-footer,
+footer.footer {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Hide only Quarto's automatically generated page title block.
+   Page titles remain in YAML metadata; body content is untouched. */
+#title-block-header {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------
+   Minimal navbar utility icons
+   Keep touch/click targets comfortable while reducing visual weight.
+   ------------------------------------------------------------------------- */
+
+/* Search: smaller glyph, stable 2rem interaction box. */
+.navbar .quarto-search-button,
+.navbar #quarto-search {
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.navbar .quarto-search-button .bi,
+.navbar .quarto-search-button i,
+.navbar .quarto-search-button svg,
+.navbar #quarto-search .bi-search,
+.navbar #quarto-search svg {
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Mobile menu: remove the Bootstrap border and replace the standard
+   three-bar glyph with a quieter two-line icon. */
+.navbar-toggler {
+  box-sizing: border-box;
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none !important;
+  color: currentColor;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:focus-visible {
+  box-shadow: none !important;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.navbar-toggler-icon {
+  width: 1.1rem;
+  height: 1rem;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor) !important;
+  background-repeat: no-repeat;
+  background-size: 1.05rem 1px, 1.05rem 1px;
+  background-position: center calc(50% - 3px), center calc(50% + 3px);
+}
+
+/* Search icon refinement: target the actual Quarto/Algolia SVG glyph.
+   The visible icon is sized directly; the 2rem click target above stays intact. */
+.navbar #quarto-search .aa-DetachedSearchButtonIcon,
+.navbar #quarto-search .aa-DetachedSearchButtonIcon svg,
+.navbar #quarto-search button svg,
+.navbar .quarto-search-button svg {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  font-size: 18px !important;
+  opacity: 0.76;
+}
+
+.navbar #quarto-search:hover .aa-DetachedSearchButtonIcon,
+.navbar #quarto-search:hover .aa-DetachedSearchButtonIcon svg,
+.navbar #quarto-search button:hover svg,
+.navbar .quarto-search-button:hover svg {
+  opacity: 1;
+}
+

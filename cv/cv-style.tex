@@ -1,0 +1,143 @@
+% PDF CV typography / layout.
+% Open-source design system:
+%   Identity/name : Spectral Bold
+%   Reading/body  : Source Serif 4
+%   UI/footer     : Source Sans 3
+%
+% XeLaTeX uses the exact families when installed on the render machine.
+% Fallbacks keep the document compilable if they are missing.
+
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+\usepackage[none]{hyphenat}
+
+\AtBeginDocument{\RaggedRight}
+
+% ---- Font families ---------------------------------------------------------
+% Preferred desktop families (installed on macOS):
+%   Name/identity : Spectral
+%   Body/reading  : Source Serif 4 SmText (optimized for small text)
+%   UI/metadata   : Source Sans 3
+%
+% If a preferred family is unavailable on another render machine, fall back
+% to TeX Live-bundled TeX Gyre fonts so the PDF remains compilable.
+
+\IfFontExistsTF{Source Serif 4 SmText}{%
+  \setmainfont{Source Serif 4 SmText}[
+    UprightFont    = *,
+    BoldFont       = * Bold,
+    ItalicFont     = * Italic,
+    BoldItalicFont = * Bold Italic
+  ]
+}{%
+  \setmainfont{texgyrepagella-regular.otf}[
+    BoldFont       = texgyrepagella-bold.otf,
+    ItalicFont     = texgyrepagella-italic.otf,
+    BoldItalicFont = texgyrepagella-bolditalic.otf
+  ]
+}
+
+\IfFontExistsTF{Spectral}{%
+  \newfontfamily\cvnamefont{Spectral}[
+    UprightFont = * Bold
+  ]
+}{%
+  \newfontfamily\cvnamefont{texgyrepagella-bold.otf}
+}
+
+\IfFontExistsTF{Source Sans 3}{%
+  \newfontfamily\cvuifont{Source Sans 3}[
+    UprightFont    = *,
+    BoldFont       = * Bold,
+    ItalicFont     = * Italic,
+    BoldItalicFont = * Bold Italic
+  ]
+}{%
+  \newfontfamily\cvuifont{texgyreheros-regular.otf}[
+    BoldFont       = texgyreheros-bold.otf,
+    ItalicFont     = texgyreheros-italic.otf,
+    BoldItalicFont = texgyreheros-bolditalic.otf
+  ]
+}
+
+\newcommand{\cvheaderfont}{\rmfamily\mdseries}
+\newcommand{\cvfooterfont}{\cvuifont}
+
+% ---- Global density --------------------------------------------------------
+\setstretch{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ---- Running header / footer ----------------------------------------------
+\providecommand{\CVSurname}{SURNAME}
+\fancypagestyle{cv}{%
+  \fancyhf{}
+  \fancyhead[R]{\cvheaderfont\fontsize{9.5}{10.5}\selectfont\MakeUppercase{\CVSurname\ CV}}
+  \fancyfoot[R]{\cvfooterfont\fontsize{9}{10}\selectfont Page \thepage\ of \pageref*{LastPage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{cvfirst}{%
+  \fancyhf{}
+  \fancyfoot[R]{\cvfooterfont\fontsize{9}{10}\selectfont Page \thepage\ of \pageref*{LastPage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{cv}
+\AtBeginDocument{\thispagestyle{cvfirst}}
+
+% ---- Section headings ------------------------------------------------------
+\titleformat{\section}
+  {\needspace{4\baselineskip}\normalfont\bfseries\fontsize{11}{12}\selectfont}
+  {}{0pt}{}
+  [\vspace{1.5pt}\titlerule]
+
+\titlespacing*{\section}
+  {0pt}{11pt}{5pt}
+
+% ---- CV name/contact -------------------------------------------------------
+\newcommand{\cvname}[1]{%
+  \begin{center}
+    {\cvnamefont\fontsize{16}{18}\selectfont #1}
+  \end{center}
+  \vspace{-3pt}
+}
+
+\newcommand{\cvcontact}[1]{%
+  \begin{center}
+    {\cvuifont\fontsize{9.8}{11.4}\selectfont #1}
+  \end{center}
+  \vspace{6pt}
+}
+
+% ---- Citation hanging indent ----------------------------------------------
+\newenvironment{cvcitation}
+  {\par\begingroup\hangindent=22pt\hangafter=1}
+  {\par\endgroup\vspace{5.5pt}}
+
+% ---- Bullets ---------------------------------------------------------------
+\setlist[itemize,1]{%
+  label={\raisebox{0.10ex}{\fontsize{7}{7}\selectfont ∙}},
+  leftmargin=11.35pt,
+  labelsep=3.4pt,
+  itemindent=0pt,
+  topsep=1.5pt,
+  partopsep=0pt,
+  parsep=0pt,
+  itemsep=0.5pt
+}
+
+\BeforeBeginEnvironment{itemize}{\vspace{-1pt}}
+\AfterEndEnvironment{itemize}{\vspace{-1pt}}

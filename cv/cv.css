@@ -1,0 +1,245 @@
+/* Responsive web CV.
+   Typography and color tokens come from ../styles.css.
+   PDF rules are isolated in cv-style.tex. */
+
+.cv-page {
+  font-family: var(--font-reading);
+  font-size: 1rem;
+  line-height: 1.35;
+  max-width: 56rem;
+  margin-inline: auto;
+  color: var(--text-primary);
+}
+
+.cv-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  line-height: 1.08;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.015em;
+}
+
+.cv-contact {
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: clamp(1.65rem, 4vw, 2.35rem);
+  overflow-wrap: anywhere;
+}
+
+.cv-page h1 {
+  font-family: var(--font-reading);
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin: clamp(1.65rem, 4vw, 2.25rem) 0 0.62rem;
+  padding-bottom: 0.18rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  column-gap: clamp(1rem, 4vw, 3rem);
+  align-items: start;
+  margin: 0 0 0.72rem;
+}
+
+.cv-main,
+.cv-date {
+  min-width: 0;
+}
+
+/* Item spacing is intentionally shared across entries and citations.
+   Section spacing remains larger via the section-heading margins. */
+
+.cv-main > :first-child,
+.cv-date > :first-child,
+.cv-citation > :first-child,
+.cv-award > :first-child {
+  margin-top: 0;
+}
+
+.cv-main > :last-child,
+.cv-date > :last-child,
+.cv-citation > :last-child,
+.cv-award > :last-child {
+  margin-bottom: 0;
+}
+
+.cv-date {
+  font-family: var(--font-ui);
+  font-size: 0.92em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.cv-citation {
+  padding-left: 1.375rem; /* ≈ Word's 22 pt hanging indent */
+  text-indent: -1.375rem;
+  margin: 0 0 0.72rem;
+}
+
+.cv-bullets {
+  margin-top: 0.16rem;
+}
+
+.cv-bullets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-bullets li {
+  position: relative;
+  margin: 0.08rem 0;
+  padding-left: 0.82rem;
+  line-height: inherit;
+}
+
+.cv-bullets li::before {
+  content: "∙";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font: inherit;
+  color: var(--text-muted);
+}
+
+.cv-award {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 1rem;
+  margin: 0 0 0.12rem;
+}
+
+.cv-award-year {
+  font-family: var(--font-ui);
+  font-size: 0.92em;
+  color: var(--text-muted);
+  min-width: 5.5rem;
+  white-space: nowrap;
+}
+
+.cv-page strong {
+  font-weight: 600;
+}
+
+/* Dark mode only changes screen presentation; the PDF remains print-light. */
+body.quarto-dark .cv-page {
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .cv-page {
+    line-height: 1.4;
+  }
+
+  .cv-entry {
+    grid-template-columns: 1fr;
+    row-gap: 0.08rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .cv-date {
+    order: 2;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .cv-citation {
+    padding-left: 0.95rem;
+    text-indent: -0.95rem;
+  }
+
+  .cv-award {
+    grid-template-columns: minmax(4.8rem, max-content) 1fr;
+    column-gap: 0.75rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .cv-page h1 {
+    margin-top: 1.5rem;
+  }
+
+  .cv-contact {
+    font-size: 0.9rem;
+  }
+
+  .cv-award {
+    grid-template-columns: 1fr;
+    row-gap: 0.05rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .cv-award-year {
+    min-width: 0;
+  }
+}
+
+
+/* -------------------------------------------------------------------------
+   Web-only CV actions
+   The PDF download control is outside .cv-page and is omitted entirely from
+   the PDF output through Quarto conditional content.
+   ------------------------------------------------------------------------- */
+.cv-web-actions {
+  width: min(100%, 900px);
+  margin: 0 auto clamp(1rem, 2.5vw, 1.5rem);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cv-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.48rem 0.82rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.45rem;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.cv-download-button::before {
+  content: "↓";
+  margin-right: 0.42rem;
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.cv-download-button:hover,
+.cv-download-button:focus-visible {
+  color: var(--link-hover);
+  border-color: color-mix(in srgb, var(--link) 55%, var(--rule));
+  background: color-mix(in srgb, var(--text-primary) 5%, transparent);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .cv-web-actions {
+    justify-content: stretch;
+    margin-bottom: 1rem;
+  }
+
+  .cv-download-button {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+}
