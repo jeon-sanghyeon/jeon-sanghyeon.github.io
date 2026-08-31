@@ -404,7 +404,7 @@ body.quarto-dark code:not(pre code) {
   .profile-contact p {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem 0.65rem;
+    gap: 0.45rem 0.55rem;
     margin: 0;
   }
 
