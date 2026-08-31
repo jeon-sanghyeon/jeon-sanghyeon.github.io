@@ -399,6 +399,7 @@ body.quarto-dark code:not(pre code) {
     grid-column: 1 / -1;
     grid-row: 2;
     margin-top: 1rem;
+    margin-bottom: 0;
   }
 
   .profile-contact p {
