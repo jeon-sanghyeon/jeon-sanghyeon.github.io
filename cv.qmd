@@ -218,6 +218,7 @@ Dept. of Advertising and Public Relations, University of Georgia, Athens, GA
 
 ::: {.cv-bullets}
 - ADPR 3120 Media Strategy and Activation
+- ADPR 3990 Special Topic: AI and Communication
 - ADPR 5710 Advertising and Communication Management
 - ADPR 5760 Digital and Social Communication Strategies
 :::
